@@ -1,6 +1,5 @@
-const fs = require('fs');
-const parse = require('csv-parse');
-const user = require('../../src/User');
+const parseCsv = require('../../src/parse-csv');
+const User = require('../../src/user');
 
 function toUser(row) {
   return new User(row.reference, row.name);
@@ -14,9 +13,9 @@ function toRow(user) {
 }
 
 function users() {
-  var input = fs.readFileSync(__dirname + '/../../resources/users.csv');
+  const data = parseCsv(__dirname + '/../../resources/users.csv', true);
 
-  console.log(input);
-};
+  console.log(data);
+}
 
 module.exports = users;
