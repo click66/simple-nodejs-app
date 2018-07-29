@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
-const userdata = require('../services/userdata');
+const users = require('../services/users');
 
 router.get('/', function(req, res) {
-  res.send(userdata());
+  res.send(users());
 });
 
 module.exports = router;
