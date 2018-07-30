@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/click66/simple-nodejs-app#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.4",
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "sinon": "^6.1.4"
   },
   "dependencies": {
     "csv": "^3.1.0",

@@ -1,5 +1,5 @@
-var assert = require('chai').assert;
-var User = require('../src/user');
+const assert = require('chai').assert;
+const User = require('../src/user');
 
 describe('User', function () {
   it('can be constructed', function () {
@@ -8,4 +8,3 @@ describe('User', function () {
     assert.instanceOf(sut, User);
   }); 
 });
-

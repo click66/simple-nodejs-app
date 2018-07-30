@@ -1,7 +1,5 @@
-const fs = require('fs');
-
-function parseCsv(filePath, hasHeader) {
-  let lines = fs.readFileSync(filePath, 'utf8').toString().split('\n').filter((r) => r);
+function parseCsv(getContents, hasHeader) {
+  let lines = getContents().split('\n').filter((r) => r);console.log(lines);
   let headings = [];
 
   if (hasHeader) {
