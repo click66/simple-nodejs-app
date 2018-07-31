@@ -1,21 +1,9 @@
 const parseCsv = require('../../src/parse-csv');
-const User = require('../../src/user');
+const readFile = require('../../src/read-file');
+const userMiddleware = require('../../src/user-middleware');
+const userRepository = require('../../src/user-repository');
 
-function toUser(row) {
-  return new User(row.reference, row.name);
-}
-
-function toRow(user) {
-  return {
-    'reference': user.reference,
-    'name': user.name,
-  };
-}
-
-function users() {
-  const data = parseCsv(__dirname + '/../../resources/users.csv', true);
-
-
-}
-
-module.exports = users;
+module.exports = userRepository(
+  parseCsv.bind(null, readFile.bind(null, __dirname + '/../../resources/users.csv'), true),
+  userMiddleware.createModel
+);
