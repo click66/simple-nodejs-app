@@ -15,7 +15,7 @@ function toRow(user) {
 function users() {
   const data = parseCsv(__dirname + '/../../resources/users.csv', true);
 
-  console.log(data);
+
 }
 
 module.exports = users;

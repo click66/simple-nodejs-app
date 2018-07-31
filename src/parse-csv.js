@@ -1,5 +1,5 @@
 function parseCsv(getContents, hasHeader) {
-  let lines = getContents().split('\n').filter((r) => r);console.log(lines);
+  let lines = getContents().split('\n').filter((r) => r);
   let headings = [];
 
   if (hasHeader) {
