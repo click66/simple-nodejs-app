@@ -73,4 +73,15 @@ describe('parseCsv', function () {
       expect(result[1]).to.have.property(1, 'bar');
     });
   });
+
+  it('copes with boundary characters', function () {
+    let result;
+
+    contents = 'abc!@#$%^&*(JESAFJSLFJLKDSA{}:"|<>?';
+
+    result = parseCsv(getContents, false);
+
+    assert.lengthOf(result, 1);
+    expect(result[0]).to.have.property(0, contents);
+  });
 });
