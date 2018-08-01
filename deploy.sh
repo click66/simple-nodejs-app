@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e -x
-apt-get update
-apt-get -y install nodejs npm git
-ln -s /usr/bin/nodejs /usr/local/bin/node
+apt-get -y update
+apt-get -y install git
+
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+apt-get install -y nodejs
 
 cd ~
 git clone https://github.com/click66/simple-nodejs-app.git
